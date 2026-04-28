@@ -61,7 +61,7 @@ fun DiscographyScreen(onBack: () -> Unit) {
             year = "2021",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_tupara,
-            tracks = listOf("Tupã-Rá", "Baião do Fim do Mundo", "Jurema", "Xangô")
+
         ),
         Album(
             title = "Vulcão",
@@ -69,7 +69,7 @@ fun DiscographyScreen(onBack: () -> Unit) {
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_vulcao,
             highlight = "Indicado ao Grammy Latino",
-            tracks = listOf("Vulcão", "Juliana", "Fogo", "Raiz")
+
         ),
         Album(
             title = "Brutown",
@@ -77,21 +77,21 @@ fun DiscographyScreen(onBack: () -> Unit) {
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_brutown,
             highlight = "Indicado ao Grammy Latino",
-            tracks = listOf("Brutown", "Sem Luz", "Pesadelo", "Cidade")
+
         ),
         Album(
             title = "Sina",
             year = "2013",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_sina,
-            tracks = listOf("Sem Condição", "Sina", "Estrada", "Mar")
+
         ),
         Album(
             title = "The Baggios",
             year = "2011",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_the_baggios,
-            tracks = listOf("Em Outras", "Baggios", "Blues do Norte", "Sertão")
+
         ),
         Album(
             title = "10 Anos Depois",

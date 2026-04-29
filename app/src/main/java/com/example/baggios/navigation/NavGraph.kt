@@ -8,6 +8,7 @@ import com.example.baggios.screenshome.HomeScreen
 import com.example.baggios.ui.screens.contacts.ContactsScreen
 import com.example.baggios.ui.screens.discography.DiscographyScreen
 import com.example.baggios.ui.screens.release.ReleaseScreen
+import com.example.baggios.ui.screens.shows.ShowsScreen
 import com.example.baggios.ui.screens.social.SocialScreen
 
 @Composable
@@ -38,6 +39,10 @@ fun NavGraph() {
 
         composable(Screen.Discography.route) {
             DiscographyScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Screen.Shows.route) {
+            ShowsScreen(onBack = { navController.popBackStack() })
         }
 
     }

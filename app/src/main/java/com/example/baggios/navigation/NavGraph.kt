@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.baggios.screenshome.HomeScreen
 import com.example.baggios.ui.screens.contacts.ContactsScreen
 import com.example.baggios.ui.screens.discography.DiscographyScreen
+import com.example.baggios.ui.screens.photos.PhotosScreen
 import com.example.baggios.ui.screens.release.ReleaseScreen
 import com.example.baggios.ui.screens.rider.RiderScreen
 import com.example.baggios.ui.screens.shows.ShowsScreen
@@ -48,6 +49,10 @@ fun NavGraph() {
 
         composable(Screen.Rider.route) {
             RiderScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Screen.Photos.route) {
+            PhotosScreen(onBack = { navController.popBackStack() })
         }
 
     }

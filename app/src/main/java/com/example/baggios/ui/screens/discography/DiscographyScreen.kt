@@ -1,5 +1,7 @@
 package com.example.baggios.ui.screens.discography
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -43,7 +45,8 @@ data class Album(
     val type: AlbumType,
     val coverRes: Int,
     val highlight: String? = null,
-    val tracks: List<String> = emptyList()
+    val tracks: List<String> = emptyList(),
+    val spotifyUrl: String? = null
 )
 
 enum class AlbumType(val label: String) {
@@ -61,7 +64,7 @@ fun DiscographyScreen(onBack: () -> Unit) {
             year = "2021",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_tupara,
-
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/7FFuP487SPFwSXrahAtsR0"
         ),
         Album(
             title = "Vulcão",
@@ -69,7 +72,7 @@ fun DiscographyScreen(onBack: () -> Unit) {
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_vulcao,
             highlight = "Indicado ao Grammy Latino",
-
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/4dYvvxiLDeGcN6w1nZl6mx"
         ),
         Album(
             title = "Brutown",
@@ -77,20 +80,21 @@ fun DiscographyScreen(onBack: () -> Unit) {
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_brutown,
             highlight = "Indicado ao Grammy Latino",
-
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/0yjvZVstS5kmNaczZ9jIO9"
         ),
         Album(
             title = "Sina",
             year = "2013",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_sina,
-
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/1hY57tdBN3hMlYS7MvaFj0"
         ),
         Album(
             title = "The Baggios",
             year = "2011",
             type = AlbumType.ALBUM,
             coverRes = com.example.baggios.R.drawable.album_the_baggios,
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/6TJKp0b7U4w3NeyQ8RjlPd"
 
         ),
         Album(
@@ -98,30 +102,35 @@ fun DiscographyScreen(onBack: () -> Unit) {
             year = "2014",
             type = AlbumType.DVD,
             coverRes = com.example.baggios.R.drawable.album_10_anos_depois,
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/4wGEtYRnlUxjxSsKaeeQvj"
         ),
         Album(
             title = "Juliana",
             year = "2018",
             type = AlbumType.EP,
             coverRes = com.example.baggios.R.drawable.ep_juliana,
+            spotifyUrl = "https://open.spotify.com/intl-pt/album/5rTGJPzc404QIS0S8bOaN9"
         ),
         Album(
             title = "Acústico Aperipê",
             year = "2014",
             type = AlbumType.EP,
             coverRes = com.example.baggios.R.drawable.ep_acustico_areripe,
+            spotifyUrl = "https://www.youtube.com/watch?v=jy3Z0yanaq4"
         ),
         Album(
             title = "Hard Times",
             year = "2009",
             type = AlbumType.EP,
             coverRes = com.example.baggios.R.drawable.ep_hard_times,
+            spotifyUrl = "https://www.youtube.com/watch?v=qMhKGTS3pzw"
         ),
         Album(
             title = "EP Demo",
             year = "2006",
             type = AlbumType.EP,
             coverRes = com.example.baggios.R.drawable.ep_demo,
+            spotifyUrl = "https://www.youtube.com/watch?v=GA0Y1rfQpjc"
         ),
     )
 
@@ -215,7 +224,15 @@ fun DiscographyHeader(onBack: () -> Unit) {
 
 @Composable
 fun AlbumCard(album: Album) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+
     Card(
+        onClick = {
+            album.spotifyUrl?.let { url ->
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                context.startActivity(intent)
+            }
+        },
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
         ),
@@ -231,7 +248,6 @@ fun AlbumCard(album: Album) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            // Capa do álbum
             AsyncImage(
                 model = album.coverRes,
                 contentDescription = "Capa de ${album.title}",
@@ -241,7 +257,6 @@ fun AlbumCard(album: Album) {
                     .clip(RoundedCornerShape(10.dp))
             )
 
-            // Informações
             Column(modifier = Modifier.weight(1f)) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -282,6 +297,13 @@ fun AlbumCard(album: Album) {
                     )
                 }
             }
+
+            // Ícone indicando que é clicável
+            Text(
+                text = "→",
+                style = MaterialTheme.typography.titleMedium,
+                color = BaggiosCyan
+            )
         }
     }
 }

@@ -80,7 +80,7 @@ fun SocialScreen(onBack: () -> Unit) {
         SocialLink(
             platform = "Spotify",
             handle = "The Baggios",
-            url = "https://open.spotify.com/artist/thebaggios",
+            url = "https://open.spotify.com/intl-pt/artist/1EYPUMAsFA0qjFmnADnBJ5",
             iconRes = com.example.baggios.R.drawable.ic_spotify,
             color = BaggiosIconRider
         ),

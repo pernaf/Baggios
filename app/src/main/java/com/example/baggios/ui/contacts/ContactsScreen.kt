@@ -20,7 +20,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -36,7 +35,6 @@ import androidx.compose.ui.unit.dp
 import com.example.baggios.ui.theme.BaggiosBorder
 import com.example.baggios.ui.theme.BaggiosCardBg
 import com.example.baggios.ui.theme.BaggiosCyan
-import com.example.baggios.ui.theme.BaggiosIconRider
 import com.example.baggios.ui.theme.BaggiosTextPrimary
 import com.example.baggios.ui.theme.BaggiosTextSecondary
 
@@ -70,19 +68,6 @@ fun ContactsScreen(onBack: () -> Unit) {
                 onClick = {
                     val intent = Intent(Intent.ACTION_SENDTO).apply {
                         data = Uri.parse("mailto:thebaggios@gmail.com")
-                    }
-                    context.startActivity(intent)
-                }
-            )
-
-            // Card de telefone
-            ContactCard(
-                icon = { Icon(Icons.Filled.Phone, contentDescription = null, tint = BaggiosIconRider, modifier = Modifier.size(22.dp)) },
-                label = "Telefone",
-                value = "+55 79 98809-0974",
-                onClick = {
-                    val intent = Intent(Intent.ACTION_DIAL).apply {
-                        data = Uri.parse("tel:+5579988090974")
                     }
                     context.startActivity(intent)
                 }

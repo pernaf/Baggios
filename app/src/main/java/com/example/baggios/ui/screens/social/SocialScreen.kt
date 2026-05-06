@@ -30,14 +30,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.baggios.ui.theme.BaggiosBorder
 import com.example.baggios.ui.theme.BaggiosCyan
 import com.example.baggios.ui.theme.BaggiosIconContact
-import com.example.baggios.ui.theme.BaggiosIconDisco
-import com.example.baggios.ui.theme.BaggiosIconRelease
 import com.example.baggios.ui.theme.BaggiosIconRider
 import com.example.baggios.ui.theme.BaggiosIconShows
 import com.example.baggios.ui.theme.BaggiosIconSocial
@@ -48,7 +47,7 @@ data class SocialLink(
     val platform: String,
     val handle: String,
     val url: String,
-    val emoji: String,
+    val iconRes: Int,
     val color: Color
 )
 
@@ -61,43 +60,29 @@ fun SocialScreen(onBack: () -> Unit) {
             platform = "Instagram",
             handle = "@thebaggios",
             url = "https://instagram.com/thebaggios",
-            emoji = "📸",
+            iconRes = com.example.baggios.R.drawable.ic_instagram,
             color = BaggiosIconSocial
         ),
         SocialLink(
             platform = "YouTube",
             handle = "/thebaggios",
             url = "https://youtube.com/thebaggios",
-            emoji = "▶",
+            iconRes = com.example.baggios.R.drawable.ic_youtube,
             color = BaggiosIconShows
         ),
         SocialLink(
             platform = "Facebook",
             handle = "/thebaggios",
             url = "https://facebook.com/thebaggios",
-            emoji = "👥",
+            iconRes = com.example.baggios.R.drawable.ic_facebook,
             color = BaggiosIconContact
-        ),
-        SocialLink(
-            platform = "Twitter / X",
-            handle = "@thebaggios",
-            url = "https://twitter.com/thebaggios",
-            emoji = "✦",
-            color = BaggiosIconRelease
         ),
         SocialLink(
             platform = "Spotify",
             handle = "The Baggios",
             url = "https://open.spotify.com/artist/thebaggios",
-            emoji = "🎵",
+            iconRes = com.example.baggios.R.drawable.ic_spotify,
             color = BaggiosIconRider
-        ),
-        SocialLink(
-            platform = "Deezer",
-            handle = "The Baggios",
-            url = "https://deezer.com/artist/thebaggios",
-            emoji = "🎶",
-            color = BaggiosIconDisco
         ),
     )
 
@@ -106,10 +91,8 @@ fun SocialScreen(onBack: () -> Unit) {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Header
         SocialHeader(onBack = onBack)
 
-        // Lista de links
         Column(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
@@ -205,6 +188,7 @@ fun SocialCard(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            // Logo da plataforma
             Box(
                 modifier = Modifier
                     .size(42.dp)
@@ -212,8 +196,14 @@ fun SocialCard(
                     .background(link.color.copy(alpha = 0.15f)),
                 contentAlignment = Alignment.Center
             ) {
-                Text(text = link.emoji, fontSize = 20.sp)
+                AsyncImage(
+                    model = link.iconRes,
+                    contentDescription = link.platform,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(26.dp)
+                )
             }
+
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = link.platform,
@@ -226,6 +216,7 @@ fun SocialCard(
                     color = BaggiosTextSecondary
                 )
             }
+
             Text(
                 text = "→",
                 style = MaterialTheme.typography.titleMedium,

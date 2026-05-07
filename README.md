@@ -13,13 +13,6 @@
 
 ---
 
-## 📸 Screenshots
-
-<div align="center">
-  <img src="screenshots/tela_principal.jpeg" width="30%" />
-  <img src="screenshots/tela_discografia.jpeg" width="30%" />
-  <img src="screenshots/tela_rider.jpeg" width="30%" />
-</div>
 
 ## 📱 Sobre o App
 
@@ -28,6 +21,12 @@ Aplicativo Android desenvolvido em **Jetpack Compose** para centralizar todos os
 > The Baggios é uma banda sergipana fundada em 2004, com 2 indicações ao Grammy Latino e mais de 20 anos de carreira.
 
 ---
+
+## 📸 Screenshots
+
+| Home | Discografia | Rider Técnico |
+|:---:|:---:|:---:|
+| ![Home](screenshots/tela_principal.jpeg) | ![Discografia](screenshots/tela_discografia.jpeg) | ![Rider](screenshots/tela_rider.jpeg) |
 
 ## ✨ Funcionalidades
 

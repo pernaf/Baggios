@@ -40,8 +40,8 @@ Aplicativo Android desenvolvido em **Jetpack Compose** para centralizar todos os
 | 🎤 **Agenda de Shows** | Próximas datas com local, cidade e detalhes do evento |
 | 🎛 **Rider Técnico** | PDFs do rider e mapas de palco disponíveis para visualizar e compartilhar |
 | 🖼 **Fotos** | Galeria de press photos e fotos de shows com visualização fullscreen |
-| 📞 **Contatos** | Email e telefone clicáveis para booking e assessoria |
-| 🔗 **Redes Sociais** | Links diretos para Instagram, Spotify, YouTube, Facebook, Twitter e Deezer |
+| 📞 **Contatos** | Email clicável para booking e assessoria |
+| 🔗 **Redes Sociais** | Links diretos para Instagram, Spotify, YouTube, Facebook |
 
 ---
 

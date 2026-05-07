@@ -160,17 +160,6 @@ Com mais de 20 anos de carreira, a banda acumula:
 
 ---
 
-## 📬 Contato
-
-| | |
-|---|---|
-| 📧 Email | thebaggios@gmail.com |
-| 📱 Telefone | +55 79 98809-0974 |
-| 🎵 Spotify | [The Baggios](https://open.spotify.com/intl-pt/artist/1EYPUMAsFA0qjFmnADnBJ5) |
-| 📸 Instagram | [@thebaggios](https://instagram.com/thebaggios) |
-| ▶ YouTube | [/thebaggios](https://youtube.com/thebaggios) |
-
----
 ## License
 ```
 The MIT License (MIT)

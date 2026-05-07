@@ -26,7 +26,8 @@ Aplicativo Android desenvolvido em **Jetpack Compose** para centralizar todos os
 
 | Home | Discografia | Rider Técnico |
 |:---:|:---:|:---:|
-| ![Home](screenshots/tela_principal.jpeg) | ![Discografia](screenshots/tela_discografia.jpeg) | ![Rider](screenshots/tela_rider.jpeg) |
+| ![Home]<img width="702" height="1600" alt="tela principal" src="https://github.com/user-attachments/assets/b0047ee0-24a0-4ade-979b-1137a5c8bd0e" /> | ![Discografia](screenshots/tela_discografia.jpeg) | ![Rider](screenshots/tela_rider.jpeg) |
+
 
 ## ✨ Funcionalidades
 

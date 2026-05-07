@@ -13,6 +13,14 @@
 
 ---
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/tela_principal.jpeg" width="30%" />
+  <img src="screenshots/tela_discografia.jpeg" width="30%" />
+  <img src="screenshots/tela_rider.jpeg" width="30%" />
+</div>
+
 ## 📱 Sobre o App
 
 Aplicativo Android desenvolvido em **Jetpack Compose** para centralizar todos os materiais oficiais da banda **The Baggios** — desde o press release até o rider técnico, tudo acessível de forma rápida e elegante.
